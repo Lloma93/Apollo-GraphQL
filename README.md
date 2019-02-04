@@ -24,3 +24,7 @@ Atualizar:
 
 devkit:
         npm i -D -E @angular-devkit/build-angular@0.6.3
+
+em caso de erro: asyncIterable no tsconfig
+      //tsconfig.json
+      "lib": [ ++"esnext.asynciterable"]
