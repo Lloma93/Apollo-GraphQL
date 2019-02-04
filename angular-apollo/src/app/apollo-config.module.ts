@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 
-import { ApolloModule } from 'apollo-angular';
-import { HttpLinkModule} from 'apollo-angular-link-http';
+import { ApolloModule, Apollo } from 'apollo-angular';
+import { HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -11,4 +11,12 @@ import { HttpClientModule } from "@angular/common/http";
     HttpLinkModule
   ]
 })
-export class ApolloConfigModule {}
+export class ApolloConfigModule {
+
+  constructor(
+    private apollo: Apollo,
+    private httpLink: HttpLink
+  ) {
+
+  }
+}
