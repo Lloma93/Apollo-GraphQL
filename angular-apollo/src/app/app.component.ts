@@ -9,12 +9,13 @@ import gql from 'graphql-tag';
 })
 export class AppComponent {
   title = 'angular-apollo';
-  private apiUrl = '';
+  // private apiUrl = '';
 
   constructor(
     private apollo: Apollo
   ) {
     this.allUsers();
+    this.createUser();
   }
 
   allUsers(): void {
@@ -32,10 +33,21 @@ export class AppComponent {
   }
 
   createUser(): void {
-    this.apollo.query({
-      query: gql`
-        mutation CreateNewUser($)
-      `
-    })
+    this.apollo.mutate({
+      mutation: gql`
+        mutation CreateNewUser($name: String!, $email: String!, $password: String!){
+          createUser(name: $name, email: $email, password: $password){
+            id
+            name
+            email
+          }
+        }
+      `,
+      variables: {
+        name: 'Black Panther',
+        email: 'blackpanther@avangers.com',
+        password: '123!QAZ2w'
+      }
+    }).subscribe(res => console.log('Mutation: ', res));
   }
 }
