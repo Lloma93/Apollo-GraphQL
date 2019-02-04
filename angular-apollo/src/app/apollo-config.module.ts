@@ -1,8 +1,11 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 
 import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
+
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
 
 @NgModule({
   imports: [
@@ -18,5 +21,12 @@ export class ApolloConfigModule {
     private httpLink: HttpLink
   ) {
 
+    const uri = 'https://api.graph.cool/simple/v1/cjqsdjik3hg0e0151y3e6uzju';
+    const http = httpLink.create({ uri });
+
+    apollo.create({
+      link: http,
+      cache: new InMemoryCache()
+    });
   }
 }
