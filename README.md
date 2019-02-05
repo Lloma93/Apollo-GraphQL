@@ -27,4 +27,8 @@ devkit:
 
 em caso de erro: asyncIterable no tsconfig
       //tsconfig.json
-      "lib": [ ++"esnext.asynciterable"]
+      
+------------------------
+tratamento de erros 
+------------------------
+$ npm i -S -E apollo-link@1.2.2 apollo-link-error@1.0.9
