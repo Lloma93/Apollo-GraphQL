@@ -17,16 +17,23 @@ $ng serve
 
 > Se ainda não:
                 npm i -S graphql@git://github.com/graphql/graphql-js.git#npm
+                npm install apollo-boost react-apollo graphql --save
 
 Atualizar:
         $ git config --global url."https://".insteadOf git://
         $ npm install graphql@git://github.com/graphql/graphql-js.git#npm
+
 
 devkit:
         npm i -D -E @angular-devkit/build-angular@0.6.3
 
 em caso de erro: asyncIterable no tsconfig
       //tsconfig.json
+"lib": [
+      "es2017",
+      "dom",
+      "esnext.asynciterable"
+    ]
       
 ------------------------
 tratamento de erros 
