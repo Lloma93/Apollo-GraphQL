@@ -15,7 +15,7 @@ export class AppComponent {
     private apollo: Apollo
   ) {
     this.allUsers();
-    this.createUser();
+    // this.createUser();
   }
 
   allUsers(): void {
@@ -44,8 +44,8 @@ export class AppComponent {
         }
       `,
       variables: {
-        name: 'Black Panther',
-        email: 'blackpanther@avangers.com',
+        name: '2Black Panther',
+        email: '2blackpanther@avangers.com',
         password: '123!QAZ2w'
       }
     }).subscribe(res => console.log('Mutation: ', res));
