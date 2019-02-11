@@ -21,7 +21,7 @@ export default async (event: FunctionEvent<EventData>) => {
   try {
     // const graphcool = fromEvent(event);
     const graphcool: Graphcool = fromEvent<EventData>(event);
-    const api = graphcool.api('simple/v1');
+    const api: GraphQLClient = graphcool.api('simple/v1');
 
     const { name, email, password } = event.data;
 
